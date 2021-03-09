@@ -19,7 +19,7 @@ jobs:
       run: |
         gitbook install
         gitbook build
-        git clone https://${{ GIT_USERNAME }}@github.com/manorrock/bengal
+        git clone https://${{ secrets.GIT_USERNAME }}@github.com/manorrock/bengal
         cd bengal
         git checkout gh-pages
         mkdir -p message/book
