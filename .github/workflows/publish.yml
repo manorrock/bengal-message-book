@@ -22,10 +22,10 @@ jobs:
         git clone https://${{ secrets.GIT_USERNAME }}@github.com/manorrock/bengal
         cd bengal
         git checkout gh-pages
-        mkdir -p message/book
+        mkdir -p message/book || true
         cd message/book
         rm -rf *
-        mv ../../_book/* .
+        mv ../../../_book/* .
         ls 
         git config user.email "noreply@manorrock.com"
         git config user.name "Automated process"
