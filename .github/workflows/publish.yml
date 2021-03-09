@@ -19,16 +19,16 @@ jobs:
       run: |
         gitbook install
         gitbook build
-        # mv _book ../../_book
-        # cd ../..
-        # git fetch --no-tags --prune --depth=5 origin +refs/heads/*:refs/remotes/origin/*
-        # git checkout gh-pages
-        # mkdir -p book/message || true
-        # rm -rf book/message/*
-        # mv _book/* book/message
-        # git config --global user.email "noreply@manorrock.com"
-        # git config --global user.name "Automated process"
-        # git add .
-        # git commit -m "Auto-publishing Bengal Message Book"
-        # git push
-
+        git clone https://${{ GIT_USERNAME }}@github.com/manorrock/bengal
+        cd bengal
+        git checkout gh-pages
+        mkdir -p message/book
+        cd message/book
+        rm -rf *
+        mv ../../_book/* .
+        ls 
+        git config user.email "noreply@manorrock.com"
+        git config user.name "Automated process"
+        git add .
+        git commit -m "Publishing Bengal Message Book"
+        git push
