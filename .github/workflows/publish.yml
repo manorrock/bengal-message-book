@@ -21,7 +21,6 @@ jobs:
         gitbook build
         git clone https://${{ secrets.GIT_USERNAME }}:${{ secrets.GIT_PASSWORD }}@github.com/manorrock/bengal-website
         cd bengal-website
-        git checkout gh-pages
         mkdir -p message/book || true
         cd message/book
         rm -rf *
